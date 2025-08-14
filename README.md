@@ -1,11 +1,25 @@
-# LENS: Learning to Segment Anything with Unified Reinforced Reasoning
+<div align ="center">
+<h1> LENS </h1>
+<h3> Learning to Segment Anything with Unified Reinforced Reasoning </h3>
 
-<p align="center">
-  <img src="./asserts/LENS.jpg" alt="LENS Framework">
-</p>
+[Lianghui Zhu](https://github.com/Unrealluver)<sup>1,\*</sup>, [Bin Ouyang](https://github.com/catchcodes)<sup>1,\*</sup>, [Yuxuan Zhang](https://github.com/CoderZhangYx)<sup>1</sup>, [Tianheng Cheng](https://scholar.google.com/citations?user=PH8rJHYAAAAJ&hl=zh-CN)<sup>1</sup>, [Rui Hu](https://github.com/isfinne)<sup>1</sup>, Haocheng Shen<sup>2</sup>, Longjin Ran<sup>2</sup>, Xiaoxin Chen<sup>2</sup>, Li Yu<sup>1</sup>, [Wenyu Liu](http://eic.hust.edu.cn/professor/liuwenyu/)<sup>1</sup>, [Xinggang Wang](https://xwcv.github.io/)<sup>1 📧</sup>
+
+<sup>1</sup> Huazhong University of Science and Technology, <sup>2</sup> vivo Mobile Communication Co., Ltd
+
+(\* equal contribution, 📧 corresponding author)
+
+</div>
+
+### News
+* **` Aug. 14th, 2025`:** We’ve released our paper on arXiv, along with the eval and demo code. Models and train code are coming soon — stay tuned! ☕️
 
 ## Abstract
 Text-prompted image segmentation enables fine-grained visual understanding and is critical for applications such as human-computer interaction and robotics. However, existing supervised fine-tuning methods typically ignore explicit chain-of-thought (CoT) reasoning at test time, which limits their ability to generalize to unseen prompts and domains. To  address this issue, we introduce LENS, a scalable reinforcement-learning framework that jointly optimizes the reasoning process and segmentation in an end-to-end manner. We propose unified reinforcement-learning rewards that span sentence-, box-, and segment-level cues, encouraging the model to generate informative CoT rationales while refining mask quality. Using a publicly available 3-billion-parameter vision–language model, i.e., Qwen2.5-VL-3B-Instruct, LENS achieves an average cIoU of 81.2% on the RefCOCO, RefCOCO+, and RefCOCOg benchmarks, outperforming the strong fine-tuned method, i.e., GLaMM, by up to 5.6%. These results demonstrate that RL-driven CoT reasoning serves as a robust prior for text-prompted segmentation and offers a practical path toward more generalizable Segment Anything models.
+
+## Overview
+<div align="center">
+<img src="./asserts/LENS.png" alt="LENS Framework">
+</div>
 
 ## Results
 ### Referring Expression Segmentation (RES)
@@ -48,3 +62,9 @@ python demo.py
 
 ## Train
 Our training script will be released soon.
+
+## Citation
+If you find LENS is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
+
+```bibtex
+```
