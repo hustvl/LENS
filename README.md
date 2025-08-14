@@ -45,8 +45,8 @@ pip install -r requirements.txt
 
 [GroundingSuite-Eval](https://github.com/hustvl/GroundingSuite)
 
-## Model
-Our trained model will be released soon.
+## Weights
+Our trained weights will be released soon.
 
 ## Evalutation
 ```bash
