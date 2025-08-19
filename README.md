@@ -71,7 +71,7 @@ Our trained weights will be released soon.
 ## Evaluation
 ```bash
 mkdir pretrained && mkdir datasets
-wget https://huggingface.co/facebook/sam2-hiera-large/blob/main/sam2_hiera_large.pt -O ./pretrained/sam2_hiera_large.pt
+wget -O ./pretrained/sam2_hiera_large.pt "https://huggingface.co/facebook/sam2-hiera-large/resolve/main/sam2_hiera_large.pt"
 bash eval.sh
 ```
 
