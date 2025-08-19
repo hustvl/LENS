@@ -24,12 +24,12 @@ Text-prompted image segmentation enables fine-grained visual understanding and i
 ## Results
 ### Referring Expression Segmentation (RES)
 <p align="center">
-  <img src="./asserts/res1.jpg" alt="RefCOCO Series Results">
+  <img src="./asserts/res1.png" alt="RefCOCO Series Results">
 </p>
 
 ### ReasonSeg and GroundingSuite-Eval
 <p align="center">
-  <img src="./asserts/res2.jpg" alt="ReasonSeg and GroundingSuite-Eval Results">
+  <img src="./asserts/res2.png" alt="ReasonSeg and GroundingSuite-Eval Results">
 </p>
 
 ## Install
