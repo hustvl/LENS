@@ -48,7 +48,7 @@ pip install -r requirements.txt
 ## Weights
 Our trained weights will be released soon.
 
-## Evalutation
+## Evaluation
 ```bash
 mkdir pretrained && mkdir datasets
 wget https://huggingface.co/facebook/sam2-hiera-large/blob/main/sam2_hiera_large.pt ./pretrained
