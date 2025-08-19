@@ -41,7 +41,7 @@ pip install -r requirements.txt
 ## Datasets
 [RefCOCO Series](https://github.com/dvlab-research/LISA?tab=readme-ov-file#training-data-preparation:~:text=Referring%20segmentation%20datasets%3A%20refCOCO%2C%20refCOCO%2B%2C%20refCOCOg)
 ```
-refer_seg/
+datasets/refer_seg/
 ├── images/mscoco/images/train2014
 ├── refcoco
 ├── refcocog
@@ -50,7 +50,7 @@ refer_seg/
 
 [Reasonseg](https://github.com/dvlab-research/LISA?tab=readme-ov-file#training-data-preparation:~:text=Reasoning%20segmentation%20dataset%3A%20ReasonSeg)
 ```
-reason_seg/ReasonSeg/
+datasets/reason_seg/ReasonSeg/
 ├── explanatory
 ├── test
 ├── train
@@ -58,6 +58,12 @@ reason_seg/ReasonSeg/
 ```
 
 [GroundingSuite-Eval](https://github.com/hustvl/GroundingSuite)
+```
+datasets/
+├── coco/
+│   └── unlabeled2017/
+└── GroundingSuite-Eval.jsonl 
+```
 
 ## Weights
 Our trained weights will be released soon.
