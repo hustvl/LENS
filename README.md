@@ -40,8 +40,22 @@ pip install -r requirements.txt
 
 ## Datasets
 [RefCOCO Series](https://github.com/dvlab-research/LISA?tab=readme-ov-file#training-data-preparation:~:text=Referring%20segmentation%20datasets%3A%20refCOCO%2C%20refCOCO%2B%2C%20refCOCOg)
+```
+refer_seg/
+├── images/mscoco/images/train2014
+├── refcoco
+├── refcocog
+└── refcoco+
+```
 
 [Reasonseg](https://github.com/dvlab-research/LISA?tab=readme-ov-file#training-data-preparation:~:text=Reasoning%20segmentation%20dataset%3A%20ReasonSeg)
+```
+reason_seg/ReasonSeg/
+├── explanatory
+├── test
+├── train
+└── val
+```
 
 [GroundingSuite-Eval](https://github.com/hustvl/GroundingSuite)
 
@@ -51,7 +65,7 @@ Our trained weights will be released soon.
 ## Evaluation
 ```bash
 mkdir pretrained && mkdir datasets
-wget https://huggingface.co/facebook/sam2-hiera-large/blob/main/sam2_hiera_large.pt ./pretrained
+wget https://huggingface.co/facebook/sam2-hiera-large/blob/main/sam2_hiera_large.pt -O ./pretrained
 bash eval.sh
 ```
 
