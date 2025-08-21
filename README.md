@@ -87,4 +87,12 @@ Our training script will be released soon.
 If you find LENS is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 
 ```bibtex
+@misc{zhu2025lens,
+    title={LENS: Learning to Segment Anything with Unified Reinforced Reasoning},
+    author={Lianghui Zhu and Bin Ouyang and Yuxuan Zhang and Tianheng Cheng and Rui Hu and Haocheng Shen and Longjin Ran and Xiaoxin Chen and Li Yu and Wenyu Liu and Xinggang Wang},
+    year={2025},
+    eprint={2508.14153},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
 ```
