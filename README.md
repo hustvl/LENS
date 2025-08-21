@@ -2,11 +2,11 @@
 <h1> LENS </h1>
 <h3> Learning to Segment Anything with Unified Reinforced Reasoning </h3>
 
-[Lianghui Zhu](https://github.com/Unrealluver)<sup>1,\*</sup>, [Bin Ouyang](https://github.com/catchcodes)<sup>1,\*</sup>, [Yuxuan Zhang](https://github.com/CoderZhangYx)<sup>1</sup>, [Tianheng Cheng](https://scholar.google.com/citations?user=PH8rJHYAAAAJ&hl=zh-CN)<sup>1</sup>, [Rui Hu](https://github.com/isfinne)<sup>1</sup>, [Haocheng Shen](https://scholar.google.com/citations?user=AfC_R58AAAAJ&hl=en)<sup>2</sup>, [Longjin Ran](https://github.com/shanren7)<sup>2</sup>, [Xiaoxin Chen](https://scholar.google.com/citations?hl=zh-CN&user=SI_oBwsAAAAJ)<sup>2</sup>, [Li Yu](https://hustdmin.github.io/)<sup>1</sup>, [Wenyu Liu](http://eic.hust.edu.cn/professor/liuwenyu/)<sup>1</sup>, [Xinggang Wang](https://xwcv.github.io/)<sup>1 📧</sup>
+[Lianghui Zhu](https://github.com/Unrealluver)<sup>1,\*</sup>, [Bin Ouyang](https://github.com/catchcodes)<sup>1,\*</sup>, [Yuxuan Zhang](https://github.com/CoderZhangYx)<sup>1</sup>, [Tianheng Cheng](https://scholar.google.com/citations?user=PH8rJHYAAAAJ&hl=zh-CN)<sup>1,🌟</sup>, [Rui Hu](https://github.com/isfinne)<sup>1</sup>, [Haocheng Shen](https://scholar.google.com/citations?user=AfC_R58AAAAJ&hl=en)<sup>2</sup>, [Longjin Ran](https://github.com/shanren7)<sup>2</sup>, [Xiaoxin Chen](https://scholar.google.com/citations?hl=zh-CN&user=SI_oBwsAAAAJ)<sup>2</sup>, [Li Yu](https://hustdmin.github.io/)<sup>1</sup>, [Wenyu Liu](http://eic.hust.edu.cn/professor/liuwenyu/)<sup>1</sup>, [Xinggang Wang](https://xwcv.github.io/)<sup>1 📧</sup>
 
 <sup>1</sup> Huazhong University of Science and Technology, <sup>2</sup> vivo Mobile Communication Co., Ltd
 
-(\* equal contribution, 📧 corresponding author)
+(\* equal contribution, 🌟 Project lead, 📧 corresponding author)
 
 </div>
 
