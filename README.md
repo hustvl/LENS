@@ -8,6 +8,8 @@
 
 (\* equal contribution, 🌟 Project lead, 📧 corresponding author)
 
+ArXiv Preprint ([arXiv 2508.14153](https://arxiv.org/pdf/2508.14153))
+
 </div>
 
 ### News
