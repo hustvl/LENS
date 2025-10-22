@@ -39,7 +39,7 @@ torchrun \
     ${PR1_PATH}/src/open_r1/grpo_vllm_sam_stage2.py \
     --deepspeed ${PR1_PATH}/configs/zero3.json \
     --output_dir "${OUTPUT_DIR}" \
-    --model_name_or_path ./pretrained/qwen2p5_8epoch1500step \
+    --model_name_or_path ./pretrained/qwen2p5_refcoco_1500step \
     --max_prompt_length 2048 \
     --max_completion_length 768 \
     --per_device_train_batch_size 4 \
