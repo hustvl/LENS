@@ -73,8 +73,14 @@ datasets/
 ```
 
 ## Weights
+You can download the pretrained weights from Hugging Face using the following commands. 
 ```bash
+# RefCOCO pretrained weights
 huggingface-cli download --resume-download OuyBin/LENS --local-dir ./pretrained
+
+# Weights before ReasonSeg fine-tuning
+huggingface-cli download --resume-download OuyBin/LENS_ReasonSeg --local-dir ./pretrained
+
 ```
 
 ## Evaluation
