@@ -73,7 +73,9 @@ datasets/
 ```
 
 ## Weights
-Our trained weights will be released soon.
+```bash
+huggingface-cli download --resume-download OuyBin/LENS --local-dir ./pretrained
+```
 
 ## Evaluation
 ```bash
