@@ -27,6 +27,7 @@ fi
 cp -r ${PR1_PATH}/src ${SRC_PATH}
 mkdir -p ${LOG_DIR}
 
+# ReasonSeg Training needs change the dataset in src/open_r1/grpo_vllm_sam_stage2.py
 # ReasonSeg Finetune: --question_template "pr1_grounding"
 # CoT: --question_template "samr1_v4"
 torchrun \
