@@ -13,7 +13,7 @@ ArXiv Preprint ([arXiv 2508.14153](https://arxiv.org/pdf/2508.14153))
 </div>
 
 ### News
-* **`Oct. 22nd, 2025`:** Training code and pretrained weights have been released! 🚀 
+* **` Oct. 22nd, 2025`:** Training code and pretrained weights have been released! 🚀 
 * **` Aug. 14th, 2025`:** We’ve released our paper on arXiv, along with the eval and demo code. Models and train code are coming soon — stay tuned! ☕️
 
 ## Abstract
