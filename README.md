@@ -21,18 +21,18 @@ Text-prompted image segmentation enables fine-grained visual understanding and i
 
 ## Overview
 <div align="center">
-<img src="./asserts/LENS.png" alt="LENS Framework">
+<img src="./assets/LENS.png" alt="LENS Framework">
 </div>
 
 ## Results
 ### Referring Expression Segmentation (RES)
 <p align="center">
-  <img src="./asserts/res1.png" alt="RefCOCO Series Results">
+  <img src="./assets/res1.png" alt="RefCOCO Series Results">
 </p>
 
 ### ReasonSeg and GroundingSuite-Eval
 <p align="center">
-  <img src="./asserts/res2.png" alt="ReasonSeg and GroundingSuite-Eval Results">
+  <img src="./assets/res2.png" alt="ReasonSeg and GroundingSuite-Eval Results">
 </p>
 
 ## Install
