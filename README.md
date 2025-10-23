@@ -106,6 +106,9 @@ bash train_qwen2p5_3b_reasonseg.sh
 bash train_qwen2p5_3b_cot.sh
 ```
 
+## Acknowledge
+This project has referenced some excellent open-sourced repos ([PR1](https://github.com/linkangheng/PR1), [EVF-SAM](https://github.com/hustvl/EVF-SAM), [GroundingSuite](https://github.com/hustvl/GroundingSuite)). Thanks for their wonderful works and contributions to the community.
+
 ## Citation
 If you find LENS is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 
