@@ -19,22 +19,24 @@ local_rank = int(os.environ.get("LOCAL_RANK", -1))
 
 class GradientCheckerCallback(TrainerCallback):
     def on_step_begin(self, args, state, control, model=None, **kwargs):
-        # 此回调在 backward() 之后，optimizer.step() 之前执行
-        if args.local_rank == 0 or args.local_rank == -1: # 检查是否是主进程
-            print(f"\n--- 梯度检查 (Callback) Global Step: {state.global_step} ---")
+        # This callback runs after backward() and before optimizer.step()
+        if args.local_rank == 0 or args.local_rank == -1:  # Check if this is the main process
+            print(f"\n--- Gradient Check (Callback) Global Step: {state.global_step} ---")
             current_model = model.module if hasattr(model, "module") else model
             params_to_check = []
             if hasattr(current_model, "learnable_query"):
                 params_to_check.append(("learnable_query", current_model.learnable_query))
-            # 类似地添加 proj_to_sam
+            # Similarly, add proj_to_sam or other parameters here
 
             for name, param in params_to_check:
                 if param.grad is not None:
-                    print(f"  参数: {name}, 梯度范数: {param.grad.norm().item():.4e}")
-                    if param.grad.norm().item() == 0.0: print(f"  警告: {name} 的梯度范数为零。")
+                    print(f"  Parameter: {name}, Gradient Norm: {param.grad.norm().item():.4e}")
+                    if param.grad.norm().item() == 0.0:
+                        print(f"  Warning: Gradient norm of {name} is zero.")
                 else:
-                    print(f"  参数: {name}, 梯度为 None.")
-            print("--- 结束梯度检查 (Callback) ---")
+                    print(f"  Parameter: {name}, Gradient is None.")
+            print("--- End of Gradient Check (Callback) ---")
+
 
 def custom_forward(
         self,
