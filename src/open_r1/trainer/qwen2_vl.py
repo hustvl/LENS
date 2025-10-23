@@ -491,20 +491,23 @@ class Qwen2VLVisionConnectorSimple(nn.Module):
 
     def forward(self, hidden_states, cu_seqlens=None, rotary_pos_emb=None):
         B, L, C = hidden_states.shape
-
-        # apply self.pos_embed
+    
+        # Apply positional embedding
         hidden_states = hidden_states + self.pos_embed
-
+    
         if cu_seqlens is None:
-            # 1. 每个序列的实际长度都是 L
+            # 1. Each sequence in the batch has an actual length of L
             actual_lengths = torch.full((B,), L, dtype=torch.long)
-            # actual_lengths 会是 torch.tensor([100, 100, 100])
-
-            # 2. 计算 cu_seqlens
-            #    torch.cat(...) 用于在累积和的前面加上一个0
+            # actual_lengths will be something like torch.tensor([100, 100, 100])
+    
+            # 2. Compute cu_seqlens
+            #    torch.cat(...) adds a 0 at the beginning of the cumulative sum
             cu_seqlens = torch.cat([torch.tensor([0]), actual_lengths.cumsum(dim=0)])
+    
+        # Pass through each block
         for block in self.blocks:
             hidden_states = block(hidden_states, cu_seqlens, rotary_pos_emb)
+    
         return hidden_states
 
 # Copied from transformers.models.qwen2.modeling_qwen2.Qwen2RMSNorm
