@@ -15,3 +15,9 @@ trl==0.17.0
 deepspeed==0.15.4
 accelerate==1.6.0
 flash-attn==2.7.0.post2
+# CUDA 11.8
+# pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118
+# CUDA 12.1
+# pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+# CUDA 12.4
+# pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu124
