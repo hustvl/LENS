@@ -9,3 +9,9 @@ pycocotools==2.0.8
 qwen_vl_utils==0.0.11
 tqdm==4.67.1
 transformers==4.51.3
+xformers==0.0.28.post3
+vllm==0.7.3
+trl==0.17.0
+deepspeed==0.15.4
+accelerate==1.6.0
+flash-attn==2.7.0.post2
