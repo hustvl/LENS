@@ -418,7 +418,7 @@ class ReferSegDataset(torch.utils.data.Dataset):
     def __init__(
         self,
         script_args,
-        base_image_dir = "/data/vjuicefs_sz_cv_v2/public_data",
+        base_image_dir = "./datasets",
         solution_format="str",
     ):
         super().__init__()
