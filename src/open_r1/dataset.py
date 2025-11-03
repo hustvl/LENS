@@ -68,79 +68,84 @@ def get_mask_from_json(json_path, img):
 
     return mask, comments, is_sentence
 
-def resize_longest(image:Image.Image, longest_side_length=640):
-    """
-    调整图像尺寸，使得最长边缩放到指定的长度。保持图像的纵横比。
 
-    :param image: 要调整大小的 PIL.Image 对象。
-    :param longest_side_length: 调整后的最长边长度。
-    :return: 调整后尺寸的 PIL.Image 对象。
+def resize_longest(image: Image.Image, longest_side_length=640):
     """
-    # 获取原始图像的宽度和高度
+    Resize the image so that its longest side is scaled to the specified length,
+    while maintaining the aspect ratio.
+
+    :param image: The PIL.Image object to resize.
+    :param longest_side_length: The length of the longest side after resizing.
+    :return: The resized PIL.Image object.
+    """
+    # Get the original width and height of the image
     original_width, original_height = image.size
 
-    # 确定最长边
+    # Determine which side is the longest
     if original_width > original_height:
         scale_factor = longest_side_length / original_width
     else:
         scale_factor = longest_side_length / original_height
 
-    # 计算新的尺寸
+    # Calculate the new dimensions
     new_width = int(original_width * scale_factor)
     new_height = int(original_height * scale_factor)
 
-    # 调整图像大小
+    # Resize the image
     resized_image = image.resize((new_width, new_height))
 
     return resized_image
 
+
 def resize_shortest(image: Image.Image, shortest_side_length=640):
     """
-    调整图像尺寸，使得最短边缩放到指定的长度，保持图像的纵横比。
+    Resize the image so that its shortest side is scaled to the specified length,
+    while maintaining the aspect ratio.
 
-    :param image: 要调整大小的 PIL.Image 对象。
-    :param shortest_side_length: 调整后的最短边长度。
-    :return: 调整后尺寸的 PIL.Image 对象。
+    :param image: The PIL.Image object to resize.
+    :param shortest_side_length: The length of the shortest side after resizing.
+    :return: The resized PIL.Image object.
     """
     original_width, original_height = image.size
 
-    # 确定最短边
+    # Determine which side is the shortest
     if original_width < original_height:
         scale_factor = shortest_side_length / original_width
     else:
         scale_factor = shortest_side_length / original_height
 
-    # 计算新的尺寸
+    # Calculate the new dimensions
     new_width = int(original_width * scale_factor)
     new_height = int(original_height * scale_factor)
 
-    # 调整图像大小
+    # Resize the image
     resized_image = image.resize((new_width, new_height))
 
     return resized_image
 
+
 def mask_to_bounding_box(mask):
     """
-    给定一个mask，计算前景的外接框（bounding box）。
+    Given a mask, compute the bounding box of the foreground.
 
-    :param mask: 二维 ndarray，包含值 0, 1, 255
-                 1: 表示前景
-                 0: 表示背景
-                 255: 表示忽略
-    :return: 外接框的坐标，以 JSON 格式返回。
+    :param mask: 2D ndarray containing values 0, 1, 255
+                 1: indicates foreground
+                 0: indicates background
+                 255: indicates ignore
+    :return: The bounding box coordinates as a JSON-style list.
     """
-    # 找到前景的坐标，即值为1的位置
+    # Find the coordinates of the foreground pixels (value == 1)
     foreground_positions = np.argwhere(mask == 1)
     
-    # 如果前景不存在，返回空
+    # If no foreground exists, return an empty box
     if foreground_positions.size == 0:
-        return [0,0,0,0]
+        return [0, 0, 0, 0]
     
-    # 计算外接框的最小和最大边界
+    # Compute the minimum and maximum boundaries of the bounding box
     ymin, xmin = foreground_positions.min(axis=0)
     ymax, xmax = foreground_positions.max(axis=0)
 
-    # 准备外接框数据
+    # Prepare the bounding box data
     bounding_box = [
         int(xmin),
         int(ymin),
@@ -149,6 +154,7 @@ def mask_to_bounding_box(mask):
     ]
 
     return bounding_box
+
 
 class ReasonSegDataset(Dataset):
     pixel_mean = torch.Tensor([123.675, 116.28, 103.53]).view(-1, 1, 1)
@@ -181,7 +187,6 @@ class ReasonSegDataset(Dataset):
 
         image = Image.open(image_path).convert(mode="RGB")
         origin_width, origin_height = image.size
-        # 降低分辨率，减小显存压力
         image = resize_longest(image, longest_side_length=640)
         width, height = image.size
         min_pixels = self.script_args.min_pixels
@@ -258,9 +263,9 @@ class ReasonSegDataset(Dataset):
 
 class ReferSegCLDataset(torch.utils.data.Dataset):
     '''
-    每个item是一个referring mask
-    __getitem__时从mask的多个referring sentence中随机选一个
-    课程学习 (Curriculum Learning) 的载入方式(简单->复杂)
+    Each item corresponds to a referring mask.
+    During __getitem__, one referring sentence is randomly selected from multiple candidates.
+    Implements a Curriculum Learning (simple → complex) loading strategy.
     '''
     pixel_mean = torch.Tensor([123.675, 116.28, 103.53]).view(-1, 1, 1)
     pixel_std = torch.Tensor([58.395, 57.12, 57.375]).view(-1, 1, 1)
@@ -403,8 +408,8 @@ class ReferSegCLDataset(torch.utils.data.Dataset):
 
 class ReferSegDataset(torch.utils.data.Dataset):
     '''
-    每个item是一个referring mask
-    __getitem__时从mask的多个referring sentence中随机选一个
+    Each item corresponds to a referring mask.
+    During __getitem__, one referring sentence is randomly selected from multiple candidates.
     '''
     pixel_mean = torch.Tensor([123.675, 116.28, 103.53]).view(-1, 1, 1)
     pixel_std = torch.Tensor([58.395, 57.12, 57.375]).view(-1, 1, 1)
@@ -413,7 +418,7 @@ class ReferSegDataset(torch.utils.data.Dataset):
     def __init__(
         self,
         script_args,
-        base_image_dir = "./datasets",
+        base_image_dir = "/data/vjuicefs_sz_cv_v2/public_data",
         solution_format="str",
     ):
         super().__init__()
@@ -589,7 +594,6 @@ class GroundingSuiteDataset(Dataset):
         self.system_prompt_template = system_prompt_registry[script_args.system_prompt_template]
         self.question_template = question_template_registry[script_args.question_template]
 
-        # 读取 JSONL 注释
         with open(anno_path, "r") as f:
             for line in f:
                 if line.strip():
@@ -617,7 +621,6 @@ class GroundingSuiteDataset(Dataset):
         sam_image = torch.from_numpy(np.array(sam_image)).permute(2, 0, 1).contiguous()
         sam_image = (sam_image - self.pixel_mean) / self.pixel_std
 
-        # box 格式转换
         xmin, ymin, xmax, ymax = ref["box"]
         if self.coord_norm_type == "qwen2vl":
             box = [
@@ -634,9 +637,8 @@ class GroundingSuiteDataset(Dataset):
                 round(ymax / height * resized_height)
             ]
 
-        # 解析 segmentation（已是 RLE 格式）
         segmentation = ref["segmentation"]
-        if isinstance(segmentation, list):  # 多个 RLE
+        if isinstance(segmentation, list):
             for i in range(len(segmentation)):
                 if not isinstance(segmentation[i]["counts"], bytes):
                     segmentation[i]["counts"] = segmentation[i]["counts"].encode()
@@ -690,10 +692,7 @@ class GSTrainDataset(Dataset):
         self.system_prompt_template = system_prompt_registry[script_args.system_prompt_template]
         self.question_template = question_template_registry[script_args.question_template]
         
-        # 获取所有 jsonl 文件路径
-        jsonl_files = glob.glob(os.path.join(anno_path, "*.jsonl"))
-        
-        # 遍历每个 jsonl 文件并读取内容
+        jsonl_files = glob.glob(os.path.join(anno_path, "*.jsonl"))        
         for jsonl_file in jsonl_files:
             with open(jsonl_file, "r") as f:
                 for line in f:
@@ -722,7 +721,6 @@ class GSTrainDataset(Dataset):
         sam_image = torch.from_numpy(np.array(sam_image)).permute(2, 0, 1).contiguous()
         sam_image = (sam_image - self.pixel_mean) / self.pixel_std
 
-        # box 格式转换
         xmin, ymin, xmax, ymax = ref["box"]
         if self.coord_norm_type == "qwen2vl":
             box = [
@@ -739,9 +737,8 @@ class GSTrainDataset(Dataset):
                 round(ymax / height * resized_height)
             ]
 
-        # 解析 segmentation（已是 RLE 格式）
         segmentation = ref["segmentation"]
-        if isinstance(segmentation, list):  # 多个 RLE
+        if isinstance(segmentation, list):
             for i in range(len(segmentation)):
                 if not isinstance(segmentation[i]["counts"], bytes):
                     segmentation[i]["counts"] = segmentation[i]["counts"].encode()
