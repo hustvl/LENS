@@ -287,6 +287,7 @@ class Qwen2VLGRPOTrainer(Trainer):
 
         # sam & projector
         self.sam = build_sam2("sam2_hiera_l.yaml", "./pretrained/sam2_hiera_large.pt", device="cuda")
+        self.sam.requires_grad_(False)
         
         if args.bf16:
             torch_dtype = torch.bfloat16
