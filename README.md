@@ -13,7 +13,7 @@ AAAI 2026 **Oral** ([arXiv 2508.14153](https://arxiv.org/pdf/2508.14153))
 </div>
 
 ### News
-* **` Nov. 8th, 2025`:** **LENS is accepted by AAAI 2026 (Oral)! **
+* **` Nov. 8th, 2025`:** **LENS is accepted by AAAI 2026 (Oral)!** 🎉🎉🎉
 * **` Oct. 22nd, 2025`:** Training code and pretrained weights have been released! 🚀 
 * **` Aug. 14th, 2025`:** We’ve released our paper on arXiv, along with the eval and demo code. Models and train code are coming soon — stay tuned! ☕️
 
