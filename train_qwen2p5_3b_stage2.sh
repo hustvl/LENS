@@ -34,7 +34,7 @@ torchrun \
     --node_rank="${NODE_RANK}" \
     --master_addr="${MASTER_ADDR}" \
     --master_port="${MASTER_PORT}" \
-    ${PR1_PATH}/src/open_r1/grpo_vllm_sam_stage2_colocate.py \
+    ${PR1_PATH}/src/open_r1/grpo_vllm_sam_stage2.py \
     --deepspeed ${PR1_PATH}/configs/zero3.json \
     --output_dir "${OUTPUT_DIR}" \
     --model_name_or_path ./weights/stage1/qwen2p5_87p5 \
