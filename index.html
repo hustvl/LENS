@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="LENS: Learning to Segment Anything with Unified Reinforced Reasoning">
+  <meta property="og:title" content="LENS: Learning to Segment Anything with Unified Reinforced Reasoning">
+  <meta property="og:description" content="LENS: Learning to Segment Anything with Unified Reinforced Reasoning">
+  <meta property="og:image" content="https://omnimotion.github.io/static/images/open_graph.jpg">
+  <meta property="twitter:title" content="LENS: Learning to Segment Anything with Unified Reinforced Reasoning">
+  <meta property="twitter:description" content="LENS: Learning to Segment Anything with Unified Reinforced Reasoning">
+  <meta property="twitter:image" content="https://omnimotion.github.io/static/images/open_graph.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="motion, tracking">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LENS: Learning to Segment Anything with Unified Reinforced Reasoning</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D65ZW4CJYF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-D65ZW4CJYF');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script src="./static/js/jquery-3.6.4.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/lazy.js"></script>
+  <script src="./static/js/faster.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">LENS: Learning to Segment Anything with Unified Reinforced Reasoning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/Unrealluver/">Lianghui Zhu</a><sup>1</sup>, </span>
+            <span class="author-block">
+              <a href="https://github.com/catchcodes/">Bin Ouyang</a><sup>1,2</sup>, </span>
+            <span class="author-block">
+              <a href="https://github.com/CoderZhangYx/">Yuxuan Zhang</a><sup>2</sup>, </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=PH8rJHYAAAAJ">Tianheng Cheng</a><sup>1</sup>, </span> 
+            <span class="author-block">
+              <a href="https://github.com/isfinne/">Rui Hu</a><sup>1,2</sup>, </span><br>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=AfC_R58AAAAJ/">Haocheng Shen</a><sup>2</sup>, </span>
+            <span class="author-block">
+              <a href="https://github.com/shanren7/">Longjin Ran</a><sup>2</sup> </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=SI_oBwsAAAAJ/">Xiaoxin Chen</a><sup>2</sup> </span>
+            <span class="author-block">
+              <a href="https://hustdmin.github.io/">Li Yu</a><sup>1</sup> </span>
+            <span class="author-block">
+              <a href="http://eic.hust.edu.cn/professor/liuwenyu/">Wenyu Liu</a><sup>1</sup> </span>
+            <span class="author-block">
+              <a href="https://xwcv.github.io/">Xinggang Wang</a><sup>1</sup> </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Huazhong University of Science and Technology &nbsp; </span>
+            <span class="author-block"><sup>2</sup>vivo Mobile Communication Co., Ltd &nbsp; </span>
+
+          </div>
+          <h1 style="font-size:24px">AAAI 2026 (<b>Oral</b>)</h1>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2508.14153"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=KHoAG3gA024"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://github.com/hustvl/LENS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-basketball-ball"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/hustvl/LENS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Three columns */
+        grid-template-rows: repeat(1, 1fr); /* Two rows */
+        gap: 0px 4px; /* Gap between videos */
+        width: 80%; /* Set the container width to 80% */
+        margin: 0 auto; /* Center the container horizontally */
+    }
+
+    .video-grid video {
+        width: 100%; /* Videos fill the container width */
+        height: auto;
+    }
+</style>
+
+<section>
+  <div class="video-grid">
+      <div>
+          <video muted playsinline autoplay loop poster="static/images/demo10.webp" preload="auto" class="click-fullscreen">
+              <source src="static/videos/good/demo10.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div>
+          <video muted playsinline autoplay loop poster="static/images/demo3.webp" preload="auto" class="click-fullscreen">
+              <source src="static/videos/good/demo3.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  <div class="columns is-centered has-text-centered">
+    <p style="margin-top: 20px; text-align: center;">LENS: Reasoning & Segmentation</p>
+  </div>
+</section>
+
+<br>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Text-prompted image segmentation enables fine-grained visual understanding and is critical for applications such as human-computer interaction and robotics. However, existing supervised fine-tuning methods typically ignore explicit chain-of-thought (CoT) reasoning at test time, which limits their ability to generalize to unseen prompts and domains. To address this issue, we introduce <b>LENS</b>, a scalable reinforcement-learning framework that jointly optimizes the reasoning process and segmentation in an end-to-end manner. We propose unified reinforcement-learning rewards that span sentence-, box-, and segment-level cues, encouraging the model to generate informative CoT rationales while refining mask quality. Using a publicly available 3-billion-parameter vision–language model, i.e., Qwen2.5-VL-3B-Instruct, LENS achieves <b> an average cIoU of 81.2% </b> on the RefCOCO, RefCOCO+, and RefCOCOg benchmarks, outperforming the strong fine-tuned method, i.e., GLaMM, by up to 5.6%. These results demonstrate that RL-driven CoT reasoning serves as a robust prior for text-prompted segmentation and offers a practical path toward more generalizable Segment Anything models.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<br>
+
+<style>
+    .model-figure {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+</style>
+
+<section>
+  <div>
+      <img src="static/images/LENS.png" alt="Model Structure" class="model-figure">
+  </div>
+  <div class="columns is-centered has-text-centered">
+    <p style="margin-top: 20px; text-align: center;">An Overview of LENS framework</p>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+
+<style>
+    .video-grid-two-cols {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 10px; /* Gap between videos */
+        width: 80%; /* Set the container width to 60% */
+        margin: 0 auto; /* Center the container horizontally */
+    }
+
+    .video-grid-two-cols video {
+        width: 100%; /* Videos fill the container width */
+        height: auto;
+    }
+</style>
+
+<div class="columns is-centered has-text-centered">
+  <h2 class="title is-3"> More Results</h2>
+</div>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="carousel-extra-padding">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-snail_shell">
+            <video class="carousel-video" id="snail_shell" controls muted loop playsinline height="100%" data-src="./static/videos/good/demo1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-sail">
+            <video class="carousel-video" id="sail" controls muted loop playsinline height="100%" data-src="./static/videos/good/demo2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-antlers">
+            <video class="carousel-video" id="antlers" controls muted loop playsinline height="100%" data-src="./static/videos/good/demo4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-dashboard">
+            <video class="carousel-video" id="dashboard" controls muted loop playsinline height="100%" data-src="./static/videos/good/demo5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-trees">
+            <video class="carousel-video" id="trees" controls muted loop playsinline height="100%" data-src="./static/videos/good/demo6.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-skis">
+            <video class="carousel-video" id="skis" controls muted loop playsinline height="100%" data-src="./static/videos/good/demo7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ferrari">
+            <video class="carousel-video" id="ferrari" controls muted loop playsinline height="100%" data-src="./static/videos/good/demo9.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-mario">
+            <video class="carousel-video" id="mario" controls muted loop playsinline height="100%" data-src="./static/videos/good/demo13.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  <p style="margin-top: 5px; text-align: center; margin-bottom: -15px;">ReasonSeg Reasoning Demos</p>
+  </div>
+</section>
+<br>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="image-column" style="margin-top: 20px;">
+        <div class="image-item" style="text-align: center; margin-bottom: 20px;">
+          <img src="./static/images/spatial_understanding_example.png" alt="Demo 1" style="width: 100%; border-radius: 8px;">
+        </div>
+        <div class="image-item" style="text-align: center; margin-bottom: 20px;">
+          <img src="./static/images/multi_object_disambiguation.png" alt="Demo 2" style="width: 100%; border-radius: 8px;">
+        </div>
+        <div class="image-item" style="text-align: center; margin-bottom: 20px;">
+          <img src="./static/images/complex_referring_expression.png" alt="Demo 3" style="width: 100%; border-radius: 8px;">
+        </div>
+        <div class="image-item" style="text-align: center; margin-bottom: 20px;">
+          <img src="./static/images/misguided_context.png" alt="Demo 4" style="width: 100%; border-radius: 8px;">
+        </div>
+      </div>
+    </div>
+  <p style="margin-top: 5px; text-align: center; margin-bottom: -15px;">Referring Expression Segmentation</p>
+  </div>
+</section>
+
+
+
+<br>
+<br>
+<br>
+
+
+<section>
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">Failure Cases</h2>
+  </div>
+  <div class="container" style="max-width: 60vw;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="content has-text-justified">
+          <p>
+            Due to the lack of multi-object training data, the model tends to produce incomplete segmentation, overlapping targets, or missed objects in multi-object segmentation tasks, resulting in suboptimal segmentation performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="video-grid">
+      <div>
+          <video muted playsinline autoplay loop poster="static/images/bad1.webp" preload="auto" class="click-fullscreen">
+              <source src="static/videos/bad/bad_case4.mp4" type="video/mp4">
+          </video>
+      </div>
+      <div>
+          <video muted playsinline autoplay loop poster="static/images/bad2.webp" preload="auto" class="click-fullscreen">
+              <source src="static/videos/bad/bad_case1.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+</section>
+
+<br>
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Acknowledgements</h2>
+    We would like to express our sincere gratitude to everyone who contributed to this work, including those who provided valuable discussions, technical support, and inspiration.
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>
+@misc{zhu2025lens,
+    title={LENS: Learning to Segment Anything with Unified Reinforced Reasoning},
+    author={Lianghui Zhu and Bin Ouyang and Yuxuan Zhang and Tianheng Cheng and Rui Hu and Haocheng Shen and Longjin Ran and Xiaoxin Chen and Li Yu and Wenyu Liu and Xinggang Wang},
+    year={2025},
+    eprint={2508.14153},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div align="center" class="container">
+    <div class="columns is-centered">
+        <div class="content">
+            This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a href="https://github.com/omnimotion/omnimotion.github.io">OmniMotion</a>.
+        </div>
+      </div>
+    </div>
+</footer>
+
+<script>
+  // 给所有带 .click-fullscreen 的视频添加点击事件
+  document.querySelectorAll('.click-fullscreen').forEach(video => {
+    video.addEventListener('click', () => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) { // Safari
+        video.webkitRequestFullscreen();
+      } else if (video.msRequestFullscreen) { // IE11
+        video.msRequestFullscreen();
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
