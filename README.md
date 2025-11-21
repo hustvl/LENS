@@ -1,6 +1,6 @@
 # [AAAI 2026 Oral] LENS: Learning to Segment Anything with Unified Reinforced Reasoning
 
-This repository contains source code for the [LENS website](https://hust-lens.github.io).
+This repository contains source code for the [LENS website](https://hustvl.github.io/LENS).
 
 If you find our work useful please cite:
 <pre>
