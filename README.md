@@ -8,7 +8,7 @@
 
 (\* equal contribution, 🌟 Project lead, 📧 corresponding author)
 
-AAAI 2026 **Oral** ([arXiv 2508.14153](https://arxiv.org/pdf/2508.14153))
+[Homepage🏠](https://hustvl.github.io/LENS/) AAAI 2026 **Oral** [arXiv📄](https://arxiv.org/pdf/2508.14153)
 
 </div>
 
