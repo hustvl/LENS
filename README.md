@@ -81,6 +81,12 @@ huggingface-cli download --resume-download OuyBin/LENS --local-dir ./pretrained/
 
 # Weights before ReasonSeg fine-tuning
 huggingface-cli download --resume-download OuyBin/LENS_ReasonSeg --local-dir ./pretrained/qwen2p5_refcoco_1500step
+
+# ReasonSeg fine-tuninh weights
+huggingface-cli download --resume-download OuyBin/LENS_ReasonSeg_FT --local-dir ./pretrained/qwen2p5_reasonseg_ft
+
+# ReasonSeg CoT weights
+huggingface-cli download --resume-download OuyBin/LENS_ReasonSeg_CoT --local-dir ./pretrained/qwen2p5_reasonseg_cot
 ```
 
 ## Evaluation
