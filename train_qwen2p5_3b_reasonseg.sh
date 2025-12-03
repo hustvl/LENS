@@ -53,7 +53,7 @@ torchrun \
     --run_name ${RUN_NAME} \
     --save_steps 100 \
     --learning_rate 3e-6 \
-    --reward_funcs "pr1_grounding" "think_format" \
+    --reward_funcs "pr1_grounding" \
     --save_only_model false \
     --system_prompt_template "default" \
     --question_template "pr1_grounding" \
